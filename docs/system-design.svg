@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820">
+  <rect width="1400" height="820" fill="#f8fafc"/>
+  <text x="700" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="#0f172a">Chatify System Design</text>
+
+  <rect x="80" y="180" width="260" height="150" rx="14" fill="#ffffff" stroke="#0891b2" stroke-width="4"/>
+  <text x="210" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">React Frontend</text>
+  <text x="210" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#334155">Vite, Tailwind, Zustand</text>
+
+  <rect x="430" y="180" width="270" height="150" rx="14" fill="#ffffff" stroke="#0891b2" stroke-width="4"/>
+  <text x="565" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">Express API</text>
+  <text x="565" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#334155">Auth, Users, Messages</text>
+
+  <rect x="790" y="180" width="270" height="150" rx="14" fill="#ffffff" stroke="#0891b2" stroke-width="4"/>
+  <text x="925" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">Socket.IO</text>
+  <text x="925" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#334155">Real-time events</text>
+
+  <rect x="1130" y="180" width="220" height="150" rx="14" fill="#ffffff" stroke="#0891b2" stroke-width="4"/>
+  <text x="1240" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">MongoDB</text>
+  <text x="1240" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#334155">Users, messages</text>
+
+  <rect x="430" y="500" width="270" height="130" rx="14" fill="#ffffff" stroke="#0891b2" stroke-width="4"/>
+  <text x="565" y="555" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#0f172a">AES Encryption</text>
+  <text x="565" y="595" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#334155">Encrypt before save</text>
+
+  <rect x="790" y="500" width="270" height="130" rx="14" fill="#ffffff" stroke="#0891b2" stroke-width="4"/>
+  <text x="925" y="555" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#0f172a">Cloudinary</text>
+  <text x="925" y="595" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#334155">Image uploads</text>
+
+  <path d="M340 255H430" stroke="#0f172a" stroke-width="4"/>
+  <path d="M700 255H790" stroke="#0f172a" stroke-width="4"/>
+  <path d="M1060 255H1130" stroke="#0f172a" stroke-width="4"/>
+  <path d="M565 330V500" stroke="#0f172a" stroke-width="4"/>
+  <path d="M650 500C720 440 800 440 875 500" fill="none" stroke="#0f172a" stroke-width="4"/>
+
+  <polygon points="420,245 445,255 420,265" fill="#0f172a"/>
+  <polygon points="780,245 805,255 780,265" fill="#0f172a"/>
+  <polygon points="1120,245 1145,255 1120,265" fill="#0f172a"/>
+  <polygon points="555,490 565,515 575,490" fill="#0f172a"/>
+
+  <text x="385" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#334155">REST API</text>
+  <text x="745" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#334155">Auth socket</text>
+  <text x="1095" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#334155">Persist</text>
+</svg>

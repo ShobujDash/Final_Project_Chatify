@@ -76,28 +76,47 @@ export const useChatStore = create((set, get) => ({
 
     try {
       const res = await axiosInstance.post(`/messages/send/${selectedUser._id}`, messageData);
-      set({ messages: messages.concat(res.data) });
+      set((state) => ({
+        messages: state.messages.map((message) =>
+          message._id === tempId ? res.data : message
+        ),
+        chats: state.chats.some((chat) => chat._id === selectedUser._id)
+          ? state.chats
+          : [selectedUser, ...state.chats],
+      }));
     } catch (error) {
       // remove optimistic message on failure
-      set({ messages: messages });
+      set((state) => ({
+        messages: state.messages.filter((message) => message._id !== tempId),
+      }));
       toast.error(error.response?.data?.message || "Something went wrong");
     }
   },
 
   subscribeToMessages: () => {
-    const { selectedUser, isSoundEnabled } = get();
-    if (!selectedUser) return;
-
     const socket = useAuthStore.getState().socket;
+    if (!socket) return;
 
+    socket.off("newMessage");
     socket.on("newMessage", (newMessage) => {
-      const isMessageSentFromSelectedUser = newMessage.senderId === selectedUser._id;
+      const activeChatUserId = get().selectedUser?._id;
+      const senderId = newMessage.senderId?.toString();
+      const isMessageSentFromSelectedUser =
+        senderId === activeChatUserId?.toString();
+
+      set((state) => ({
+        messages: isMessageSentFromSelectedUser
+          ? [...state.messages, newMessage]
+          : state.messages,
+        chats:
+          newMessage.sender && !state.chats.some((chat) => chat._id === senderId)
+            ? [newMessage.sender, ...state.chats]
+            : state.chats,
+      }));
+
       if (!isMessageSentFromSelectedUser) return;
 
-      const currentMessages = get().messages;
-      set({ messages: [...currentMessages, newMessage] });
-
-      if (isSoundEnabled) {
+      if (get().isSoundEnabled) {
         const notificationSound = new Audio("/sounds/notification.mp3");
 
         notificationSound.currentTime = 0; // reset to start
@@ -108,6 +127,6 @@ export const useChatStore = create((set, get) => ({
 
   unsubscribeFromMessages: () => {
     const socket = useAuthStore.getState().socket;
-    socket.off("newMessage");
+    socket?.off("newMessage");
   },
 }));

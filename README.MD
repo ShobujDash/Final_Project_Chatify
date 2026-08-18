@@ -63,3 +63,13 @@ cd frontend
 npm install
 npm run dev
 ```
+
+---
+
+## Project Documentation
+
+- [Project Report](PROJECT_REPORT.md)
+- [System Design](SYSTEM_DESIGN.md)
+- [Project Report Image](docs/project-report.svg)
+- [Database Design Image](docs/database-design.svg)
+- [System Design Image](docs/system-design.svg)
